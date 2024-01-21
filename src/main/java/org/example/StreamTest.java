@@ -8,6 +8,21 @@ import static java.util.stream.Collectors.toMap;
 
 public class StreamTest {
     public static void main(String[] args) {
+
+        // changing string to array and then sorting
+
+        String s = "hello";
+       char[]cha =  s.toCharArray();
+
+    Arrays.sort(cha);
+
+    for(char e:cha){
+        System.out.println("element of char array:"+ e);
+    }
+
+
+
+
         List<Integer> li = new ArrayList<>();
         li.add(2);
         li.add(7);
