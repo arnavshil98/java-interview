@@ -20,8 +20,9 @@ public class ComparatorPriceTest implements Comparator<ComparatorPriceTest> {
     // compares two different objects
     @Override
     public int compare(ComparatorPriceTest o1, ComparatorPriceTest o2) {
-        if (o1.price < o2.price) return 1;
-        else if (o1.price > o2.price) return -1;
+      // ascending order
+        if (o1.price > o2.price) return 1;
+        else if (o1.price < o2.price) return -1;
         else return 0;
     }
 
