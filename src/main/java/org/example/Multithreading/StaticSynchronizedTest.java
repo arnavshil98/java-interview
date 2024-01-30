@@ -4,16 +4,16 @@ package org.example.Multithreading;
 
 class App {
 
+    static int f;
     public static synchronized void print(int i) {
         for (int s = 1; s <= 5; s++) {
-            System.out.println(s * i);
+            f = s;
+            System.out.println(f * i);
         }
     }
 }
 public class StaticSynchronizedTest {
     public static void main(String[] args) {
-
-
         Thread th1 = new Thread(){
             @Override
             public void run(){

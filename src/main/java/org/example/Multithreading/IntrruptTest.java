@@ -17,8 +17,8 @@ public class IntrruptTest extends Thread {
     public static void main(String[] args) throws InterruptedException {
         IntrruptTest test = new IntrruptTest();
         test.start();
-        test.interrupt();
-        test.join();
+//        test.interrupt();
+        test.join(); // only after thread is executed, next block will be called.
         System.out.println("main thread executed");
     }
 
