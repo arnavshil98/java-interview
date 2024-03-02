@@ -31,7 +31,7 @@ Collections.sort(li,Comparator.reverseOrder());
 
 
 // reverse order iteration using list iterator
-        ListIterator<Integer> listIterator = li.listIterator(li.size());
+        ListIterator<Integer> listIterator = li.listIterator(li.size()); // we have to pass size of list
         while (listIterator.hasPrevious()){
             System.out.println(listIterator.previous());
         }
@@ -50,7 +50,7 @@ Collections.sort(li,Comparator.reverseOrder());
         vector.add(1);
         vector.add(8);
 // iterator concurrent modification is possible
-        Enumeration<Integer> iterator1 = vector.elements();
+        Enumeration<Integer> iterator1 = vector.elements(); // read-only
 
         while(iterator1.hasMoreElements()){
             vector.set(2,9);

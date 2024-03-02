@@ -24,7 +24,7 @@ public class DefaultMethodClass implements Interface1, Interface2{
         System.out.println("hi");
     }
 
-    //    @Override
+//        @Override
 //    public void display(){
 //        //this will give compilation error as ambigious method will be used
 //    }

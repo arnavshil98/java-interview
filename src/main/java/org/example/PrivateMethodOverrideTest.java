@@ -28,11 +28,13 @@ class B extends A {
         System.out.println("class B call function");
     }
 
+
     private void display() {
         System.out.println("B.display");
     }
 
     // need public method to call a private method in other class
+    @Override
     public void callDisplay() {
         System.out.println("B.callDisplay");
         display();

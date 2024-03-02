@@ -1,7 +1,7 @@
 package org.example.javacore;
 
 public class MemberInnerClassTest {
-    // class is like a member
+    // class is like a member, we can accsess private members
     private class A{
         int i;
         public A(int i){

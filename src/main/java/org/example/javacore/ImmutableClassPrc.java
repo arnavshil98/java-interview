@@ -17,7 +17,7 @@ public final class ImmutableClassPrc {
         for (Integer key : hm.keySet()) {
             tempHm.put(key, hm.get(key));
         }
-        this.hm = tempHm;
+        this.hm = tempHm; // performing deep copy
     }
 
     public int getI() {

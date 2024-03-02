@@ -3,7 +3,7 @@ package org.example.javacore;
 
 interface AnonymousInterface{
     public void test();
-    public void test1();
+    public void test1(); // if default no need to implement
 }
 
  class AnonymousClass{

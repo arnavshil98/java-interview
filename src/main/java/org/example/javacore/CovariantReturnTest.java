@@ -27,10 +27,12 @@ public class CovariantReturnTest {
 
     public static void main(String[] args) {
         C c = new C();
-        c.test();
+
+        System.out.println(c.test() instanceof A);
 
         D d = new D();
-        d.test();
 
+
+        System.out.println(d.test() instanceof B);
     }
 }
