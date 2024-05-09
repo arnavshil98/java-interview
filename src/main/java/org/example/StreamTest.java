@@ -80,7 +80,7 @@ public class StreamTest {
         ItemToPrice.put("mango",80);
         ItemToPrice.put("guava",40);
 
-        ItemToPrice.forEach((x,y)-> System.out.println("furit "+ x + " price: " + y));
+        ItemToPrice.forEach((x,y)-> System.out.println("fruit "+ x + " price: " + y));
 
         Map<String, Integer> sortedByValue = ItemToPrice
                 .entrySet()

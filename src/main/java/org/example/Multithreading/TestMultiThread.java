@@ -1,6 +1,6 @@
 package org.example.Multithreading;
 
-
+// this is object level lock , not a class level lock
 class Incrementer extends Thread{
 
     public synchronized void printVal(int i){

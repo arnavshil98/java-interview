@@ -6,7 +6,7 @@ public class CheckingVowels {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
         System.out.println(str);
-       Boolean isVowel =  str.matches(".*[aeiou].*");
+        Boolean isVowel =  str.matches(".*[aeiou].*");
         System.out.println(isVowel);
     }
 }

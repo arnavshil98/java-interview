@@ -11,7 +11,9 @@ interface AnonymousInterface{
     public void test(){
         System.out.println("AnonymousClass");
     }
-
+     public void test1(){
+         System.out.println("AnonymousClass");
+     }
  }
 
 public class AnonymousInnnerTest {
@@ -29,7 +31,8 @@ public class AnonymousInnnerTest {
 
             @Override
             public void test1() {
-                System.out.println("AnonymousInnnerTest1");
+                System.out.println("AnonymousInnnerTest1")
+                ;
             }
         };
 
