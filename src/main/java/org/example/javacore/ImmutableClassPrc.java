@@ -11,13 +11,13 @@ public final class ImmutableClassPrc {
     public ImmutableClassPrc(int i, HashMap<Integer, String> hm) {
         this.i = i;
 
-        // implementing deep copy;
+        // implementing shallow copy;
         HashMap<Integer,String> tempHm = new HashMap<>();
 
         for (Integer key : hm.keySet()) {
             tempHm.put(key, hm.get(key));
         }
-        this.hm = tempHm; // performing deep copy
+        this.hm = tempHm; // performing shallow copy
     }
 
     public int getI() {
@@ -45,7 +45,7 @@ public final class ImmutableClassPrc {
 
 
         hm.put(3,"three");
-        // without deep copy , hm will be updated
+        // without shallow copy , hm will be updated
         System.out.println(immutableClassPrc.getI());
         System.out.println(immutableClassPrc.getHm());
 
