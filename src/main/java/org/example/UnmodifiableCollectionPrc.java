@@ -14,13 +14,6 @@ public class UnmodifiableCollectionPrc {
 
            li = Collections.unmodifiableList(li);
            li.add(2);
-
-
-
-
     }
-
-
-
 
 }

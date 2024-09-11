@@ -14,6 +14,8 @@ public class StreamTest {
         String s = "hello";
        char[]cha =  s.toCharArray();
 
+//       Arrays.stream(cha).
+
     Arrays.sort(cha);
 
     for(char e:cha){
