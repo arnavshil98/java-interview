@@ -3,8 +3,7 @@ package org.example;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class IteratingTest
-{
+public class IteratingTest {
     public static void main(String[] args) {
         List<Integer> li = new ArrayList<>();
         li.add(2);
@@ -17,12 +16,12 @@ public class IteratingTest
  or java.util.concurrent.CopyOnWriteArrayList
  */
 
-Collections.sort(li,Comparator.reverseOrder());
+        Collections.sort(li, Comparator.reverseOrder());
         Iterator<Integer> iterator = li.iterator();
-        while(iterator.hasNext()){
-            li.set(2,9);
+        while (iterator.hasNext()) {
+            li.set(2, 9);
 
-            if(iterator.next()==4){
+            if (iterator.next() == 4) {
                 iterator.remove();
             }
         }
@@ -30,12 +29,22 @@ Collections.sort(li,Comparator.reverseOrder());
         System.out.println(li);
 
 
-// reverse order iteration using list iterator
+        // reverse order iteration using list iterator
+
+        // we have to pass size only in case of reverse traversal
+
         ListIterator<Integer> listIterator = li.listIterator(li.size()); // we have to pass size of list
-        while (listIterator.hasPrevious()){
+        while (listIterator.hasPrevious()) {
             System.out.println(listIterator.previous());
         }
 
+        // we don't need to pass size in this case
+        ListIterator<Integer> iterator1 = li.listIterator();
+
+        while (iterator1.hasNext()) {
+            System.out.println(iterator1.next());
+
+        }
 
 
     /*
@@ -44,17 +53,17 @@ Collections.sort(li,Comparator.reverseOrder());
      */
 
 
-        Vector<Integer>  vector = new Vector<>(); // thread safe , synchronized
+        Vector<Integer> vector = new Vector<>(); // thread safe , synchronized
         vector.add(2);
         vector.add(4);
         vector.add(1);
         vector.add(8);
 // iterator concurrent modification is possible
-        Enumeration<Integer> iterator1 = vector.elements(); // read-only
+        Enumeration<Integer> iterator12 = vector.elements(); // read-only
 
-        while(iterator1.hasMoreElements()){
-            vector.set(2,9);
-            iterator1.nextElement();
+        while (iterator12.hasMoreElements()) {
+            vector.set(2, 9);
+            iterator12.nextElement();
 // note: remove method is not available in enumeration
 //            if(iterator1.nextElement()==4){
 //                iterator1.remove();
@@ -62,7 +71,6 @@ Collections.sort(li,Comparator.reverseOrder());
         }
         System.out.println("vector");
         System.out.println(vector);
-
 
 
         Hashtable<Integer, String> hash
@@ -94,32 +102,32 @@ Collections.sort(li,Comparator.reverseOrder());
         fail fast and fail safe
          */
         Map<String, Integer> hm1 = new HashMap<>();
-        hm1.put("one",1);
-        hm1.put("two",2);
-        hm1.put("three",3);
-        hm1.put("four",4);
+        hm1.put("one", 1);
+        hm1.put("two", 2);
+        hm1.put("three", 3);
+        hm1.put("four", 4);
 
         System.out.println("######### fail fast #########");
         Iterator<String> itr = hm1.keySet().iterator();
 
-        while (itr.hasNext()){
+        while (itr.hasNext()) {
             System.out.println(hm1.get(itr.next()));
-             hm1.put("five",5); // concurrent modification exception
+            hm1.put("five", 5); // concurrent modification exception
 
         }
 
         ConcurrentHashMap<String, Integer> hm2 = new ConcurrentHashMap<>();
-        hm2.put("one",1);
-        hm2.put("two",2);
-        hm2.put("three",3);
-        hm2.put("four",4);
+        hm2.put("one", 1);
+        hm2.put("two", 2);
+        hm2.put("three", 3);
+        hm2.put("four", 4);
 
         System.out.println("######### fail fast #########");
         Iterator<String> itr2 = hm2.keySet().iterator();
 
-        while (itr2.hasNext()){
+        while (itr2.hasNext()) {
             System.out.println(hm2.get(itr2.next()));
-            hm2.put("five",5);
+            hm2.put("five", 5);
 
         }
     }

@@ -17,7 +17,7 @@ public class BinarySearch {
             findIndex(arr,0,middleIndex,find);
         }
 
-    };
+    }
     public static void main(String[] args) {
        int[] arr = {3,5,7,9,22,23}; // always sorted
 
