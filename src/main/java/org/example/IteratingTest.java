@@ -112,7 +112,7 @@ public class IteratingTest {
 
         while (itr.hasNext()) {
             System.out.println(hm1.get(itr.next()));
-            hm1.put("five", 5); // concurrent modification exception
+//            hm1.put("five", 5); // concurrent modification exception
 
         }
 
@@ -122,7 +122,7 @@ public class IteratingTest {
         hm2.put("three", 3);
         hm2.put("four", 4);
 
-        System.out.println("######### fail fast #########");
+        System.out.println("######### fail safe #########");
         Iterator<String> itr2 = hm2.keySet().iterator();
 
         while (itr2.hasNext()) {
