@@ -1,7 +1,11 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
 import java.util.StringJoiner;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class StringTest {
     public static void main(String[] args) {
@@ -60,6 +64,9 @@ public class StringTest {
         StringJoiner sj1 = new StringJoiner(",");
 
     System.out.println(sj1.add(al.get(0)).add(al.get(1)));
+
+
+
 
     }
 }

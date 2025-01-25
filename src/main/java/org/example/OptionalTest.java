@@ -35,8 +35,8 @@ public class OptionalTest {
         System.out.println(Optional.ofNullable(null) instanceof Optional);
         System.out.println(Optional.ofNullable("hello").orElse("Hi"));
 //        Optional.ofNullable("Namaste").orElse("Hi");
-        boolean namasteList = Optional.ofNullable("Namaste")
-                .stream().collect(Collectors.toList()) instanceof List;
+        List<?> namasteList = Optional.ofNullable("Namaste")
+                .stream().collect(Collectors.toList());
         System.out.println("namasteList:"+ namasteList);
     }
 }

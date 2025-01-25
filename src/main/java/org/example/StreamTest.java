@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -60,7 +61,7 @@ public class StreamTest {
 
         fm.stream().flatMap(Collection::stream).forEach(System.out::println);
         System.out.println("###################");
-        fm.stream().flatMap(e->Stream.of(e)).forEach(System.out::println);
+        fm.stream().flatMap(e->e.stream()).forEach(System.out::println);
         System.out.println("########## reduce #########");
 
         List<Integer> fmFlat =  fm.stream().flatMap(Collection::stream).collect(Collectors.toList());
@@ -149,6 +150,15 @@ The fork-join framework was added to java.util.concurrent in Java 7 to handle ta
         int seqSum = listOfNumbers.stream().reduce(0,Integer::sum);
         System.out.println("seqSum");
         System.out.println(seqSum);
+
+
+
+        String str = "aaeeeac";
+        Map<String,Long> mp = Arrays.stream(str.split("")).collect(
+                Collectors.groupingBy(Function.identity(),Collectors.counting())
+        );
+
+        System.out.println(mp);
 
     }
 }

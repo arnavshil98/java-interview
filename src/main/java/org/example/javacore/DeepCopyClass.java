@@ -48,8 +48,8 @@ public class DeepCopyClass  implements Cloneable{
         System.out.println(deepCopyClass.toString());
         System.out.println(deepCopyClass1.toString());
 
-        deepCopyClass1.setI(2);
-        deepCopyClass1.setS("my god");
+        deepCopyClass.setI(2);
+        deepCopyClass.setS("my god");
 
         System.out.println(deepCopyClass.toString());
         System.out.println(deepCopyClass1.toString());
