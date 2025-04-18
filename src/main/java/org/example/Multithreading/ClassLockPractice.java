@@ -17,12 +17,7 @@ public class ClassLockPractice extends Thread{
         }
     }
     public static void main(String[] args) {
-        Thread th1 = new Thread(){
-            @Override
-            public void run() {
-                ClassLockPractice.setIncrementor();
-            }
-        };
+        Thread th1 = new Thread(() -> ClassLockPractice.setIncrementor());
 
         Thread th2 = new Thread(){
             @Override
@@ -32,5 +27,6 @@ public class ClassLockPractice extends Thread{
         };
         th1.start();
         th2.start();
+//        Runnable runnable = () -> {};
     }
 }

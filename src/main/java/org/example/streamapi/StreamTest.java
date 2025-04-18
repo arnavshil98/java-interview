@@ -1,4 +1,4 @@
-package org.example;
+package org.example.streamapi;
 
 import java.util.*;
 import java.util.function.Function;
@@ -14,10 +14,11 @@ public class StreamTest {
 
         String s = "hello";
        char[]cha =  s.toCharArray();
-
+        Integer[] arr1 = {1,23,4};
 //       Arrays.stream(cha).
 
-    Arrays.sort(cha);
+    Arrays.sort(arr1,Comparator.reverseOrder());
+//    Arrays.stream(arr1).sorted().collect(Collectors.toList());
 
     for(char e:cha){
         System.out.println("element of char array:"+ e);
@@ -45,11 +46,21 @@ public class StreamTest {
 
       //   sort
         // study comparator vs comparable
-        li.stream().sorted((o1, o2) -> o2-o1).forEach(System.out::println); // reversed
+
+        li.stream().sorted((o1, o2) -> o2-o1).forEach(System.out::println); // reversed comparator called compare(o1,o2);
         li.stream().sorted().forEach(System.out::println); // natural
         li.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
         Boolean result =  li.stream().allMatch(i-> i>4); // return boolean
+        li.stream().findFirst();
+        li.stream().findAny();
+        li.stream().allMatch(i->i>2);
+        li.stream().anyMatch(i->i>2);
+
+
         System.out.println(result);
+
+
+        Arrays.stream("aabbcccdddd".split("")).distinct().forEach(System.out::println);
 
         // flatmap
 
@@ -90,7 +101,7 @@ public class StreamTest {
                 .stream()
                 .sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
                 .collect(
-                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1,
+                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
                                 LinkedHashMap::new));
 
         System.out.println(sortedByValue);

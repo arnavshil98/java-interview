@@ -1,6 +1,7 @@
 package org.example.CommonCodingQuestions;
 
-import java.util.Iterator;
+
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -12,7 +13,8 @@ public class ReverseLinkedList {
         ll.add(6);
         ll.add(7);
         ll.add(8);
-
+        Collections.reverse(ll);
+        System.out.println(ll);
         // listIterator(***** important list.size() ****)
         ListIterator<Integer> reverseLi = ll.listIterator(ll.size());
         while(reverseLi.hasPrevious()){

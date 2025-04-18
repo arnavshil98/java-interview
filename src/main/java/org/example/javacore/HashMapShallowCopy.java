@@ -11,7 +11,7 @@ public class HashMapShallowCopy implements Cloneable{
     }
 
     @Override
-    protected HashMapShallowCopy clone() throws CloneNotSupportedException {
+    protected HashMapShallowCopy clone() {
         return this;
     }
 
