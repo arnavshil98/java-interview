@@ -4,22 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FibonacciIterative {
+    public static int fib(int n) {
+        //your code goes here
+        if(n==1) return 1;
+        if(n==0) return 0;
+
+        return fib(n-1) + fib(n-2);
+
+    }
     public static void main(String[] args) {
-        Integer a = 0;
-        Integer b = 1;
-        Integer c = 1;
-        List<Integer> li = new ArrayList<>();
-       li.add(a);li.add(b);li.add(c);
-        for(int i=0; i<5; i++){
 
-         int sum = b+c;
-         b = c;
-         c = sum;
-         li.add(sum);
-
-        }
-
-        li.forEach(System.out::println);
+        System.out.println(fib(7));
 
     }
 }
