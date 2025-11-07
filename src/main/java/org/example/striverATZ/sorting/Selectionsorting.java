@@ -22,7 +22,7 @@ public class Selectionsorting {
         printArr(arr);
     }
 
-    private static void printArr(int[] arr) {
+    static void printArr(int[] arr) {
         for (int i:arr
              ) {
             System.out.print(i+" ");
