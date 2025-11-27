@@ -1,17 +1,29 @@
 package org.example.striverATZ.arraysQuestions;
 
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 public class KadaneAlgorithm {
-    /*
-    Given an integer array nums,
-    find the subarray with the largest sum and return the sum of the elements present in that subarray.
 
-    Input: nums = [2, 3, 5, -2, 7, -4]
-    Output: 15
-    Explanation:
-    The subarray from index 0 to index 4 has the largest sum = 15
-     */
+    public static int maxSumSubArray(int[] arr) {
+        int oldSum = arr[0];
+        int maxVal = oldSum;
+        for (int i = 1; i < arr.length; i++) {
+           int currentSum = (oldSum < 0) ? arr[i] : oldSum + arr[i];
+            oldSum = currentSum;
+            maxVal = Math.max(maxVal, currentSum);
+        }
+        return maxVal;
+    }
+
     public static void main(String[] args) {
+        int[] arr = new int[]{2, 3, -8, 7, -1, 2, 3}; // -2, -3, -7, -2, -10, -4 -> -2
+        // 2, 3, -8, 7, -1, 2, 3 -> 11
 
+        int max = maxSumSubArray(arr);
+
+        System.out.println(max);
 
     }
 }
